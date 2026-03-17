@@ -225,9 +225,9 @@ int main(int argc, char **argv)
     vel_pub = nh.advertise<geometry_msgs::Twist>("/cmd_vel", 10);
     
     // 订阅TOF传感器和里程计话题
-    ros::Subscriber sub_1 = nh.subscribe<sensor_msgs::Range>("/ul/sensor1", 10, rangeCallback1); // 左侧TOF
-    ros::Subscriber sub_2 = nh.subscribe<sensor_msgs::Range>("/ul/sensor2", 10, rangeCallback2); // 前方TOF
-    ros::Subscriber sub_3 = nh.subscribe<sensor_msgs::Range>("/ul/sensor3", 10, rangeCallback3); // 右侧TOF
+    ros::Subscriber sub_1 = nh.subscribe<sensor_msgs::Range>("/us/tof1", 10, rangeCallback1); // 左侧TOF
+    ros::Subscriber sub_2 = nh.subscribe<sensor_msgs::Range>("/us/tof2", 10, rangeCallback2); // 前方TOF
+    ros::Subscriber sub_3 = nh.subscribe<sensor_msgs::Range>("/us/tof3", 10, rangeCallback3); // 右侧TOF
     ros::Subscriber odom_sub = nh.subscribe("/odom", 100, odomCallback);
 
     // 设置循环频率：10Hz
